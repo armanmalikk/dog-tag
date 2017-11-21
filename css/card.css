@@ -37,6 +37,7 @@ nav ul li a:hover {
 .container {
   margin: auto;
   width: 80%;
+  padding-left: 5%;
 }
 
 .badge {
@@ -76,7 +77,7 @@ nav ul li a:hover {
   padding-top: 20px;
 }
 .shopping-cart .shopping-cart-items li {
- 
+
 }
 .shopping-cart .shopping-cart-items img {
   float: left;

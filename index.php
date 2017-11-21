@@ -16,16 +16,16 @@
        color: <?php echo $header_text_color; ?>;
     }
     ul.topnav li a{
-       color: <?php echo $header_text_color; ?>; 
+       color: <?php echo $header_text_color; ?>;
     }
     ul.topnav{
         background-color: <?php echo $header_background_color; ?>;
     }
     #email-text{
-        color: <?php echo $header_text_color; ?>; 
+        color: <?php echo $header_text_color; ?>;
     }
     #number{
-         color: <?php echo $header_text_color; ?>; 
+         color: <?php echo $header_text_color; ?>;
     }
 </style>
 <?php
@@ -66,8 +66,8 @@
 		if(!isset($_POST['tag2Br'])){
 			$cart_silencer2_color_id= "8";
 		}
-	
-		
+
+
 
 		$cart_type="1";
 		$cart_tag1_line1_text = $_POST['tag1-line-1'];
@@ -116,11 +116,11 @@
 
 			// 	");
 
-			
-		}		//if/else 
+
+		}		//if/else
 	?>
 <html>
-  <head>	
+  <head>
   		<title>Welcome to Dog-tag</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -129,8 +129,8 @@
 	    <link rel="stylesheet" href="style.css">
 	    <link rel="stylesheet" href="css/card.css">
 	    <link rel="stylesheet" href="css/mediaquary.css">
-	    
-	    
+
+
 	    <script src="js/map.js"></script>
 	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSynGTe5RpwVIy0z0d3kb_M3_U-Q-jC74"></script>
 
@@ -152,7 +152,7 @@
 					) == 2) : ?>
 
 					<span>
-					
+
 
 		<input type="submit" name="be_submitd" value="join Dog Club for $34.95"/>
 
@@ -162,7 +162,7 @@
 				<?php elseif($dog_tag->getting_data_by_another_field(
 						'users','user_type','user_id',user_id
 					) == 1): ?>
-						<img style="height:33px;width:33px;" src="premium.png" /> 
+						<img style="height:33px;width:33px;" src="premium.png" />
 				<?php endif; ?>
 					</li>
 				<?php else: ?>
@@ -181,7 +181,7 @@
 				   <div class="col-sm-12">
 					   <div class="col-sm-1">
 					   </div>
-					   <?php 
+					   <?php
 	$query = $dog_tag->show_sorted_row_values('general','general_id','ASC');
 	while($fetches = mysqli_fetch_assoc($query)) :
  ?>
@@ -210,7 +210,7 @@
 						   <div class="col-sm-6">
 						       <img src="images/cart1.png" id="shopping">
 						   </div>
-						   
+
 
 
 						  <div class="container">
@@ -240,23 +240,23 @@
 								</style>
 
                                         <ul class="shopping-cart-items">
-<?php 
+<?php
 $query = $dog_tag->show_sorted_value_of_user_in_limit('carts','cart_user_id',user_id,'cart_id','DESC','3');
 while($fetches = mysqli_fetch_assoc($query)) :
 ?>
 
-<?php 
+<?php
 	$silencer_top_cart = $dog_tag->getting_data_by_another_field('silencer_color','silencer_color_image','silencer_color_id',$fetches['cart_silencer1_color_id']);
 	?>
                                             <li class="clearfix">
                                                 <img src="data:image;base64,<?php echo $silencer_top_cart; ?>" class="potrait-frame-cart" alt="" />
-<?php 
+<?php
 	$tag_top_cart = $dog_tag->getting_data_by_another_field('tag_color','tag_color_image','tag_color_id',$fetches['cart_tag1_color_id']);
 
 
 	?>
 												<img src="data:image;base64,<?php echo $tag_top_cart; ?>" class="potraitImg-cart noborder main-img" alt=""/>
-												
+
                                                 <span class="item-name">Dog Tag</span>
                                                 <span class="item-price"><?php echo price; ?></span>
                                                 <!-- <span class="item-quantity">Quantity: 01</span -->
@@ -266,7 +266,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 
                                         <a href="checkout.php" class="button">Checkout</a>
                                     </div>
-                                    
+
                                 </div><!------------end shopping-cart--------->
 
 
@@ -318,25 +318,25 @@ while($fetches = mysqli_fetch_assoc($query)) :
 
 						  <!-- Wrapper for slides -->
 						  <div class="carousel-inner" role="listbox">
-								  <?php 
+								  <?php
 								  $find_active_class = 0;
 								  	$query = $dog_tag->show_sorted_row_values('slider_images','slider_image_id','DESC');
 								  while($fetches = mysqli_fetch_assoc($query)) :
 								  ?>
-							
+
 									<?php if($find_active_class == 0) :?>
 										<div class="item active">
 									<?php else: ?>
 										<div class="item">
 									 <?php endif; ?>
-								
-								
+
+
 								  <a href="<?php echo $fetches['slider_link']; ?>" >
 								  <img src="data:image;base64,<?php echo $fetches['slider_image']; ?>" alt="" />
 								  </a>
 									</div>
-							<?php 
-							
+							<?php
+
 							$find_active_class++;
 							endwhile;
 							?>
@@ -407,7 +407,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 							 $query = $dog_tag->show_sorted_row_values('silencer_color','silencer_color_id','DESC');
 							 while($fetches = mysqli_fetch_assoc($query)):
 							 ?>
-		<img style="height:90px;" src="data:image;base64,<?php echo $fetches['silencer_color_image']; ?>" data-tag="data:image;base64,<?php echo $fetches['silencer_color_image']; ?>" class="tag"  data-img ="<?php echo $fetches['silencer_color_id'] ?>">					   		
+		<img style="height:90px;" src="data:image;base64,<?php echo $fetches['silencer_color_image']; ?>" data-tag="data:image;base64,<?php echo $fetches['silencer_color_image']; ?>" class="tag"  data-img ="<?php echo $fetches['silencer_color_id'] ?>">
 
 			<?php endwhile; ?>
 			<br><br>
@@ -415,7 +415,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 						  </div><!-----------------------set-bar--2----- ---------------->
 						   <div><!-----------------------new div------------------------>
 
-			
+
 
 							   <img src="images/red-link.png" class="red-link">
 							   <div class="col-sm-12">
@@ -430,13 +430,13 @@ while($fetches = mysqli_fetch_assoc($query)) :
 								     <img src="images/bar-body/bar-body1.png" class="demo-pic1">
 									   <div class="answer-fild answer-field-tag1" data-align="left">
 								           <h3 class="ans1" data-tag="ans1"></h3>
-										  
+
 										   <h3 class="ans2" data-tag="ans2"></h3>
-										   
+
 										   <h3 class="ans3" data-tag="ans3"></h3>
-										   
+
 										   <h3 class="ans4" data-tag="ans4"></h3>
-										   
+
 										   <h3 class="ans5" data-tag="ans5"></h3>
 									   </div>
 									     </div><!------------col-sm-12---------------------->
@@ -478,7 +478,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 												   <h3 class="ans3" data-tag="ans8" id="ans8"></h3>
 
 												   <h3 class="ans4" data-tag="ans9" id="ans9"></h3>
-												   
+
 												   <h3 class="ans5" data-tag="ans10" id="ans10" ></h3>
 											   </div>
 									      </div><!------------col-sm-12-------------------->
@@ -489,7 +489,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 						                        </div><!-------------col-sm-1-------------------->
 												   <div class="col-sm-8">
 													   <h4 class="tag-text">2. Tag Text</h4>
-													   <h5>Align 2</h5><img src="images/menu-bar.png" class="check1"><img src="images/menu-bar1.png" class="check2"> 
+													   <h5>Align 2</h5><img src="images/menu-bar.png" class="check1"><img src="images/menu-bar1.png" class="check2">
 													   <br><br>
 								Line1 <input type="text" name="LastName" class="input1" maxlength="15" id="input6"><br>
 								Line2 <input type="text" name="FirstName" class="input2" maxlength="15" id="input7"><br>
@@ -501,7 +501,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 									    </section><!-------------section-------------------->
 								   </div><!----------col-m-5-------------->
 							   </div><!---------------col-sm-12-------------->
-						   
+
 						   </div><!-----------------------new div end---------------------->
 						  </div><!-----------------------set-bar--3---------------------->
 					   </div>
@@ -533,7 +533,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 								   <h5 class="price-qut-name">Qty:<input type="text" value="1" id="input-size"></h5>
 
 							   </div>
-                               
+
 							   <div class="col-sm-4">
 							   <input type="hidden" name="hidden_test" id="hidden_test" />
 							      <!-- <img src="images/cart-button.JPG" > -->
@@ -547,7 +547,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 				</div>
 			 </div>
 			</form>
-			
+
 		 </section><!----------------------section--step--4---------------------------------------------->
 		 <section id="prodeuct">
 		     <div class="container-fluid">
@@ -578,7 +578,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 							<h6>. Backpacks & Book Bags</h6>
 						</div>
 						<div class="col-sm-2" id="footer-text">
-							<h6>.     Key Chains 
+							<h6>.     Key Chains
 </h6>
 							<h6>. Paintball Teams</h6>
 							<h6>. Airsoft Teams</h6>
@@ -589,10 +589,10 @@ while($fetches = mysqli_fetch_assoc($query)) :
 						</div>
 						<div class="col-sm-2" id="footer-text">
 							<h6>. Business Cards
-    
-    
-   
-    
+
+
+
+
 </h6>
 							<h6>. Weddings</h6>
 							<h6>. Proposals</h6>
@@ -602,7 +602,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 							<h6>. Church Groups</h6>
 						</div>
 						<div class="col-sm-2" id="footer-text">
-							<h6>. Bar/Bat Mitzvahs   
+							<h6>. Bar/Bat Mitzvahs
 </h6>
 							<h6>. Retirement Parties</h6>
 							<h6>. Awards</h6>
@@ -612,7 +612,7 @@ while($fetches = mysqli_fetch_assoc($query)) :
 							<h6>. JROTC Groups</h6>
 						</div>
                         <div class="col-sm-2" id="footer-text">
-							<h6>. Police & Fire Departments   
+							<h6>. Police & Fire Departments
 </h6>
 							<h6>. Pet Tags</h6>
 							<h6>. Famous Quotes</h6>
@@ -629,9 +629,9 @@ while($fetches = mysqli_fetch_assoc($query)) :
 		<!---------------------------------------FOOTER-BAR-------------------------------------------------------------->
 		  <section>
               <div id="contact-map" style="height:300px;"></div>
-          </section><!---------------section-------------->
-		  
-             
+      </section><!---------------section-------------->
+
+
              <section id="second-footer">
                  <div class="container">
                     <div class="row">
@@ -660,7 +660,7 @@ Terms & Conditions</a></span></li>
                                     <li><h5 class="second-footer-list-header">PAYMENT OPTIONS</h5></li>
                                     <li><img src="images/all-cards.PNG" class="all-the-images"></li>
                                 </ul>
-                                
+
                            </div>
                             <div class="col-sm-3">
                                 <ul class="second-footer-list">
